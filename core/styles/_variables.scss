@@ -1,0 +1,30 @@
+// layout
+$layout-default-maxWidth: 700px;
+$layout-default-sideGap: 25px;
+
+// colors
+$color_base: #f8f8f8; // default text, etc..
+$color_layer: #fff; // default text, etc..
+$color_1: #343434; // default text, etc..
+$color_2: #555; // hovered link, button, etc..
+$color_3: #2759fd; // link, buttons, etc..
+$color_4: #bbb; // disabled elements
+$color_5: #8a8a8a; // description elements
+$color_6: #e5e5e5; // input elements
+$dorminant_1: #2759fd;
+$dorminant_2: #e94545;
+
+// font names
+$font-one: "Poppins";
+$font-two: Helvetica;
+
+@function fallback-fonts($preferFallback: false) {
+    $prefix: Helvetica, Arial;
+    $suffix: "Segoe UI", sans-serif;
+
+    @if ($preferFallback) {
+        @return $prefix, $preferFallback, $suffix;
+    } @else {
+        @return $prefix, $suffix;
+    }
+}

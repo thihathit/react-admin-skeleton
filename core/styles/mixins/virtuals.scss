@@ -1,0 +1,50 @@
+@mixin x-prefixes() {
+    display: block;
+    content: " ";
+    position: absolute;
+    z-index: 0;
+}
+
+@mixin x-prepare() {
+    position: relative;
+
+    @include x-after();
+    @include x-before();
+}
+
+@mixin x-before() {
+    &:before {
+        @include x-prefixes();
+    }
+}
+
+@mixin x-after() {
+    &:after {
+        @include x-prefixes();
+    }
+}
+
+@mixin reset-button($block: true) {
+    @if $block {
+        display: block;
+    }
+
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+@mixin reset-input() {
+    display: block;
+    background: none;
+    border: none;
+}
+
+@mixin layer() {
+    background-color: var(--color_layer);
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba($color: #000000, $alpha: 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+}
